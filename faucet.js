@@ -38,11 +38,7 @@ const session = require("express-session")
 const RedisStore = require("connect-redis")(session);
 let client = redis.createClient({
     legacyMode: true,
-    socket: {
-        port: process.env.REDIS_PORT || 6379,
-        host: 'redis-server',
-    }
-    // url: 'redis://redis:6379'
+    url: 'redis://redis:6379'
 })
 client.on("connect", function () {
     console.log(`connected to redis`);
