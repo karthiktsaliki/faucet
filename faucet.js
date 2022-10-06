@@ -40,7 +40,7 @@ let client = redis.createClient({
     legacyMode: true,
     socket: {
         port: process.env.REDIS_PORT || 6379,
-        host: process.env.REDIS_HOST || 'localhost'
+        host: 'redis-server',
     }
     // url: 'redis://redis:6379'
 })
