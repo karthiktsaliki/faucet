@@ -26,7 +26,7 @@ const Long = require("long")
  */
 const redis = require('ioredis')
 const client = redis.createClient({
-    port: 6380,
+    port: 6379,
     host: 'redis',
 })
 client.on('connect', function() {
