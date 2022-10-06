@@ -24,34 +24,34 @@ const Long = require("long")
     Redis Connection
     Default no credential to local host
  */
-// const redis = require('ioredis')
-// const client = redis.createClient({
-//     port: process.env.REDIS_PORT || 6379,
-//     host: process.env.REDIS_HOST || 'localhost',
+const redis = require('ioredis')
+const client = redis.createClient({
+    port: 6380,
+    host: 'redis',
+})
+client.on('connect', function() {
+    console.log('connected');
+});
+
+// const redis = require("ioredis");
+// const session = require("express-session")
+// const RedisStore = require("connect-redis")(session);
+// let client = redis.createClient({
+//     legacyMode: true,
+//     url: 'redis://redis:6379'
 // })
-// client.on('connect', function() {
-//     console.log('connected');
+// client.on("connect", function () {
+//     console.log(`connected to redis`);
 // });
 
-const redis = require("ioredis");
-const session = require("express-session")
-const RedisStore = require("connect-redis")(session);
-let client = redis.createClient({
-    legacyMode: true,
-    url: 'redis://redis:6379'
-})
-client.on("connect", function () {
-    console.log(`connected to redis`);
-});
+// client.on("error", function (err) {
+//     console.log("redis connection error " + err);
+//     throw err;
+// });
 
-client.on("error", function (err) {
-    console.log("redis connection error " + err);
-    throw err;
-});
-
-client.on("end", function (err) {
-    console.log("redis connection end " + err);
-});
+// client.on("end", function (err) {
+//     console.log("redis connection end " + err);
+// });
 
 /*
     Remove whitespaces from string
