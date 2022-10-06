@@ -10,9 +10,9 @@ const {
 const {
     stringToPath
 } = require("@cosmjs/crypto");
-const restAPI = process.env.BLOCKCHAIN_REST_SERVER;
-const rpc = process.env.RPC;
-const mnemonic = process.env.FAUCET_MNEMONIC;
+const restAPI = 'http://localhost:1317';
+const rpc = 'http://localhost:26657';
+const mnemonic = '';
 const msgSendTypeUrl = "/cosmos.bank.v1beta1.MsgMultiSend";
 const {
     MsgMultiSend,

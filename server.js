@@ -2,7 +2,7 @@ require('newrelic');
 const faucet = require("./faucet");
 const express = require('express');
 const app = express();
-const port = process.env.SERVER_PORT;
+const port = 8080;
 const cors = require('cors');
 const constants = require("./config/constants");
 
